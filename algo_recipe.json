@@ -2,5 +2,5 @@
   "name": "SuperModel",
   "description": "Algorithm to build a super model",
   "command": "super_model.py --number-factors {{ n_factors }} --input-xapi {{ INPUT_DATA }} --output-model {{ OUTPUT_DATA }}",
-  "harbor_url": "51.178.55.33:80/test/test",
+  "harbor_url": "51.178.55.33:80/test/test"
 }
