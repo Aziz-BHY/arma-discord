@@ -1,0 +1,58 @@
+{
+  "name": "First Technical Scenario",
+  "description": "This scenario is used for recommendation... ",
+  "output": ["output.json"],
+  "docker_images": [
+    {
+      "name": "test:latest",
+      
+      "url": "http://51.178.55.33:80/test/test"
+    }
+  ],
+  "switchable_algorithms": [
+    {
+      "name": "Generate model",
+      "description": "Algorithm used to generate a model. The algorithm must connect to a trax database to fetch data.\n The algorithm generate a model in output.",
+      "template": "templates/user_model.nf.j2",
+      "nf_variable": "userModel"
+    },
+    {
+      "name": "Test data",
+      "description": "Algorithm to test data on model generated before. The algorithm must take:\n input model\ninput file containing data (see Readme of this scenario)\nGenerate a list of data",
+      "template": "templates/user_test.nf.j2",
+      "nf_variable": "userTest"
+    }
+  ],
+  "parameters": [
+     {
+      "name": "datasetName",
+      "description": "The name of the dataset to be used with this scenario",
+      "type": "string",
+      "default": "oulad"
+    },
+    {
+      "name": "rmse",
+      "description": "The name of the indicator RMSE",
+      "type": "string",
+      "default": "rmse"
+    },
+    {
+      "name": "fcp",
+      "description": "The name of the indicator FCP",
+      "type": "string",
+      "default": "fcp"
+    },
+    {
+      "name": "mae",
+      "description": "The name of the indicator MAE",
+      "type": "string",
+      "default": "mae"
+    },
+    {
+      "name": "mse",
+      "description": "The name of the indicator MSE",
+      "type": "string",
+      "default": "mse"
+    }
+  ]
+}
